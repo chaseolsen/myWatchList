@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300%7CPlayfair+Display);
+
+/*font-family: 'Open Sans';
+font-family: 'Playfair  Display';*/
+
+body {
+    font-family: 'Open Sans';
+    /*background-image: url('new-york-1605182.jpg');*/
+    background-size: cover;
+}
+
+#main-wrap {
+    overflow: hidden;
+}
+
+#watchList {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+#stockData {
+    float: right;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.listItem {
+  font-size: 36px;
+  text-transform: uppercase;
+  height: 80px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  margin-top: 25px;
+  margin-left: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.results {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+}
+
+.symbol {
+    font-size: 72px;
+    font-weight: 3px;
+}
+
+.price {
+    font-size: 48px;
+}
+
+.currency {
+    font-size: 24px;
+}
+
+.openDiff {
+    font-size: 36px;
+    color: red;
+}
+
+.lastUpdate {
+    color: grey;
+    font-size: 24px;
+}
+
+.addContent {
+  margin-top: 50px;
+}
+
+.searchBar {
+  text-align: center;
+}
