@@ -15,13 +15,11 @@
 
 
 			<div ng-repeat="stock in stocks">
-
 				<div class="listItem">
 					{{stock.id}}
 					<button ng-click="getStockInfo(stock.id)">View</button>
+					<button ng-click="deleteStock(stock.id)">Delete</button>
 				</div>
-
-
 			</div>
 
 
@@ -30,6 +28,16 @@
 				<input type="text" placeholder="Stock Symbol" ng-model="newStockId">
 				<button ng-click="addStock()">Add to WatchList</button>
 			</div>
+
+
+<!-- TEST -->
+			<div>
+				<input type="text" placeholder="Stock Symbol" ng-model="testGet">
+				<button ng-click="lessSpecific(testGet)">test</button>
+			</div>
+<!--  -->
+
+
 
 
 

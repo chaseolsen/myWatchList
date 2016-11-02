@@ -7,13 +7,18 @@ angular.module('apiApp').controller('mainCtrl', function($scope, mainSvc) {
 
     $scope.getMyList();
 
-
+//TEST_______________________________________
+    $scope.lessSpecific = function(stockReq){
+      
+      mainSvc.lessSpecific(stockReq).then(function(response){
+        $scope.stockReqData = response;
+      });
+    };
+//___________________________________________
 
     $scope.getStockInfo = function(stock) {
-      console.log(stock);
         mainSvc.getStockInfo(stock).then(function(response) {
             $scope.stockData = response;
-            console.log($scope.stockData);
         });
     };
 
@@ -25,6 +30,11 @@ angular.module('apiApp').controller('mainCtrl', function($scope, mainSvc) {
       if(mainSvc.addStock(newStock)){
         $scope.newStockId = "";
       }
+    };
+
+    $scope.deleteStock = function(stockToRemove){
+
+      mainSvc.removeData(stockToRemove);
     };
 
 });
