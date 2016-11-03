@@ -6,83 +6,34 @@ font-family: 'Playfair  Display';*/
 
 body {
     font-family: 'Open Sans';
-    background-image: url('cityWallpaper.jpg');
+    /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cityWallpaper.jpg');*/
     background-size: cover;
 }
 
-#main-wrap {
-    overflow: hidden;
-}
-
-#watchList {
-    float: left;
-    width: 30%;
-    text-align: center;
-    border-style: solid;
-    border-color: rgba(0,0,0, 0.8);
-    border-width: thin;
-    border-radius: 5px;
-    margin-left: 100px;
-    padding-bottom: 25px;
-    margin-top: 10vh;
-    box-shadow: 1px 1px 2px rgba(0,0,0, 0.8);
-    background-color: rgba(0,0,0, 0.8);
-}
-
-#stockData {
-  text-align: center;
-    float: right;
-    width: 55%;
+.main {
+  /*width: 100vw;*/
     align-items: center;
-    justify-content: center;
-}
-
-.listName {
-  color: white;
-  font-size: 36px;
+    /*display: flex;*/
+    justify-content: center;;
+    margin-top: 20vh;
 }
 
 
-.contentData {
-  margin-top: 40vh;
-  margin-left: 10vw;
-  justify-content: center;
-  width: 500px;
-  border-style: solid;
-  border-color: rgba(0,0,0, 0.8);
-  border-width: thin;
-  border-radius: 5px;
-  background-color: rgba(0,0,0, 0.8);
-  box-shadow: 1px 1px 2px rgba(0,0,0, 0.8);
+
+.watchList {
 }
 
-
-.listItem {
-  /*background-color: white;*/
-  text-transform: uppercase;
-  height: 80px;
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.resultData {
   text-align: center;
-}
-.listName {
-  width: 10vh;
-}
-.btn-danger {
-  border: none;
-}
-
-.results {
-    visibility: hidden;
-    text-align: center;
-    color: white;
-    font-size: 24px;
 }
 
 .searchBar {
-  margin-top: 10px;
+  margin-top: 50px;
+}
+
+.listSymbol {
+  text-transform: uppercase;
+  font-size: 36px;
 }
 
 .symbol {
@@ -101,12 +52,4 @@ body {
 .lastUpdate {
     color: grey;
     font-size: 24px;
-}
-
-.addContent {
-  margin-top: 50px;
-}
-
-.searchBar {
-  text-align: center;
 }
