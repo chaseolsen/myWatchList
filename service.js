@@ -6,22 +6,34 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
 
 
     var stocks = [{
+        id: 'nvidia'
+    }, {
+        id: 'apple'
+    }, {
         id: 'amd'
     }, {
-        id: 'nvda'
-    }, ];
+        id: 'amazon'
+    }, {
+        id: 'netflix'
+    }, {
+        id: 'starbucks'
+    }
+
+ ];
 
 
-//TEST _____________________________________________
     this.lessSpecific = function(stockReq){
       return $http({
         method: 'GET',
         url: 'http://dev.markitondemand.com/MODApis/Api/v2/lookup/json?input=' + stockReq
       }).then(function(response){
         var stockSymbol = response.data[0].Symbol;
+        var stockCompany = response.data[0].Name;
+        // console.log(stockCompany);
+        // console.log(response);
         // console.log(stockSymbol);
 
-        $http({
+        return $http({
             method: 'GET',
             url: 'http://www.google.com/finance/info?q=NASDAQ:' + stockSymbol
         }).then(function(response) {
@@ -38,31 +50,6 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
 
       });
     };
-
-
-
-//_______________________________________________
-
-
-    this.getStockInfo = function(stock) {
-        return $http({
-            method: 'GET',
-            url: 'http://www.google.com/finance/info?q=NASDAQ:' + stock
-        }).then(function(response) {
-            if (response.status === 200) {
-                // console.log(response.data);
-                var total = response.data.split("//");
-                var newTotal = JSON.parse(total[1]);
-                var symbol = newTotal[0];
-
-                return symbol;
-            }
-            return "Something went wrong";
-        });
-    };
-
-
-
 
 
     this.getMyList = function() {

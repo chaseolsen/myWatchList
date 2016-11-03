@@ -7,18 +7,23 @@
 </head>
 
 <body ng-controller="mainCtrl">
+	<!-- <div id="navbar">
+		<div id="navbar-logo">
+		MyWatchList
+	</div>
+		<div> -->
+
+	</div>
 
 	<div id="main-wrap">
-
 		<div id="watchList">
-
 
 
 			<div ng-repeat="stock in stocks">
 				<div class="listItem">
-					{{stock.id}}
-					<button ng-click="getStockInfo(stock.id)">View</button>
-					<button ng-click="deleteStock(stock.id)">Delete</button>
+					<div class="listName">{{stock.id}}</div>
+					<div><button class="btn btn-default" ng-click="lessSpecific(stock.id)">View</button></div>
+					<div><button class="btn btn-danger" ng-click="deleteStock(stock.id)">Delete</button></div>
 				</div>
 			</div>
 
@@ -26,39 +31,34 @@
 
 			<div class="addContent">
 				<input type="text" placeholder="Stock Symbol" ng-model="newStockId">
-				<button ng-click="addStock()">Add to WatchList</button>
+				<button class="btn btn-default" ng-click="addStock()">Add to WatchList</button>
 			</div>
 
-
-<!-- TEST -->
-			<div>
-				<input type="text" placeholder="Stock Symbol" ng-model="testGet">
-				<button ng-click="lessSpecific(testGet)">test</button>
-			</div>
-<!--  -->
-
-
-
+			<div class="searchBar">
+				<input type="text" ng-model="stock" placeholder="Search Stock">
+				<button class="btn btn-default" ng-click="lessSpecific(stock)">Search</span>
+				</div>
 
 
 		</div>
 		<!--  -->
 		<div id="stockData">
 
-			<div class="searchBar">
-				<input type="text" ng-model="stock" placeholder="Search Stock">
-				<button ng-click="getStockInfo(stock)">Search</span>
-				</div>
+			<div class="contentData">
+
+
 
 				<div class="results">
-					<span class="symbol">{{stockData.t}}</span><br>
-					<span class="price">{{stockData.l}}</span>
+					<span class="symbol">{{stockReqData.t}}</span><br>
+					<span class="price">{{stockReqData.l}}</span>
 					<span class="currency">USD</span>
-					<span class="openDiff">{{stockData.c}}</span>
+					<span class="openDiff" ng-model="difference">{{stockReqData.c}}</span>
 					<div>
-						<span class="lastUpdate">{{stockData.lt}}</span><br>
+						<span class="lastUpdate">{{stockReqData.lt}}</span><br>
 					</div>
 				</div>
+
+			</div>
 
 
 				<!-- TradingView Widget BEGIN -->
@@ -83,6 +83,7 @@ new TradingView.widget({
 </script> -->
 
 			</div>
+
 	</div>
 
 
@@ -94,6 +95,9 @@ new TradingView.widget({
 	<script src="controller.js"></script>
 	<script src="service.js"></script>
 	<script src="directive.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+	<script src="jquery.js"></script>
+
 </body>
 
 </html>
