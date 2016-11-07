@@ -11,11 +11,6 @@
 
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
 			<a class="navbar-brand" href="#">myWatchList</a>
 		</div>
 		<div class="navbar-collapse collapse">
@@ -60,9 +55,10 @@
 
 			<div class="resultData col-md-7">
 				<!--Results/Data Div-->
+				<!-- <input type="text" name="date" id="date"> -->
 
 				<div class="results">
-					<span class="symbol">{{stockReqData.t}}</span><br>
+					<a ng-href="http://finance.yahoo.com/quote/{{stockReqData.t}}"><span class="symbol">{{stockReqData.t}}</span></a><br>
 					<span class="price">{{stockReqData.l}}</span>
 					<span class="currency">USD</span>
 					<span class="openDiff" ng-model="difference">{{stockReqData.c}} ({{stockReqData.cp}}%)</span>
@@ -80,6 +76,7 @@
 
 
 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 	<script src="app.js"></script>
 	<script src="controller.js"></script>
@@ -87,6 +84,12 @@
 	<script src="directive.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	<script src="jquery.js"></script>
+	<script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+	<script src="jquery-ui.js"></script>
+
 
 </body>
 

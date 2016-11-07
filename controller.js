@@ -6,6 +6,7 @@ angular.module('apiApp').controller('mainCtrl', function($scope, mainSvc) {
     };
 
     $scope.getMyList();
+    
 
     //_________Goes through lessSpecific and returns that stock data____________
     $scope.lessSpecific = function(stockReq) {

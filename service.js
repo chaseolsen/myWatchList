@@ -20,7 +20,9 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
 
 
     this.lessSpecific = function(stockReq){
-      
+
+      // var deferred = $q.defer();
+
       return $http({
         method: 'GET',
         url: 'http://dev.markitondemand.com/MODApis/Api/v2/lookup/json?input=' + stockReq
