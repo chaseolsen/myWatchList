@@ -21,11 +21,8 @@ angular.module('apiApp').controller('mainCtrl', function($scope, mainSvc) {
               $(".openDiff").css('color', 'red');
             }
 
-
         });
     };
-
-    //
 
 
 

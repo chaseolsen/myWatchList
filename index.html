@@ -9,6 +9,24 @@
 
 <body ng-controller="mainCtrl">
 
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+			<a class="navbar-brand" href="#">myWatchList</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <li><input type="text" class="form-control" ng-model="stock" placeholder="Search Stock"></li> -->
+				<!-- <li><button class="btn btn-default" ng-click="lessSpecific(stock)">Search</button></li> -->
+				<!-- <li><a ng-click="lessSpecific(stock)">Search</a></li> -->
+			</ul>
+		</div>
+	</nav>
+
 	<div class="main container">
 		<div class="row">
 			<div class="watchList col-md-5">
@@ -28,13 +46,13 @@
 					</div>
 					<div class="row">
 						<div class="searchBar">
-						<div class="col-md-8">
-							<input type="text" placeholder="Stock Symbol" ng-model="newStockId">
+							<div class="col-md-8">
+								<input type="text" class="form-control" placeholder="Stock Symbol" ng-model="newStockId">
+							</div>
+							<div class="col-md-4">
+								<button class="btn btn-default addToList" ng-click="addStock()">Add to List</button>
+							</div>
 						</div>
-						<div class="col-md-4">
-							<button class="btn btn-default" ng-click="addStock()">Add to WatchList</button>
-						</div>
-					</div>
 					</div>
 				</div>
 
@@ -43,19 +61,15 @@
 			<div class="resultData col-md-7">
 				<!--Results/Data Div-->
 
-
 				<div class="results">
 					<span class="symbol">{{stockReqData.t}}</span><br>
 					<span class="price">{{stockReqData.l}}</span>
 					<span class="currency">USD</span>
-					<span class="openDiff" ng-model="difference">{{stockReqData.c}}</span>
+					<span class="openDiff" ng-model="difference">{{stockReqData.c}} ({{stockReqData.cp}}%)</span>
 					<div>
 						<span class="lastUpdate">{{stockReqData.lt}}</span><br>
 					</div>
 				</div>
-
-
-
 
 			</div>
 		</div>

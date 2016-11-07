@@ -3,8 +3,6 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
     // Less specific stock lookup
     //http://dev.markitondemand.com/MODApis/Api/v2/lookup/json?input=nvidia
 
-
-
     var stocks = [{
         id: 'nvidia'
     }, {
@@ -18,11 +16,11 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
     }, {
         id: 'starbucks'
     }
-
  ];
 
 
     this.lessSpecific = function(stockReq){
+      
       return $http({
         method: 'GET',
         url: 'http://dev.markitondemand.com/MODApis/Api/v2/lookup/json?input=' + stockReq
@@ -30,7 +28,7 @@ angular.module('apiApp').service('mainSvc', function($http, $q) {
         var stockSymbol = response.data[0].Symbol;
         var stockCompany = response.data[0].Name;
         // console.log(stockCompany);
-        // console.log(response);
+        console.log(response);
         // console.log(stockSymbol);
 
         return $http({
